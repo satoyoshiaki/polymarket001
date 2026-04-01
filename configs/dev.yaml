@@ -1,0 +1,58 @@
+app_name: polymarket001
+mode: paper
+live_trading_enabled: false
+log:
+  level: DEBUG
+  json: false
+metrics:
+  enabled: true
+  host: 0.0.0.0
+  port: 9108
+webhook:
+  url: null
+polymarket:
+  websocket_url: wss://ws-subscriptions-clob.polymarket.com/ws/market
+  rest_url: https://clob.polymarket.com
+external_prices:
+  symbol: BTCUSDT
+signal:
+  default_size: 5.0
+  taker_fee_estimate: 0.01
+  slippage_estimate: 0.005
+  execution_buffer: 0.0025
+  min_net_edge: 0.01
+  ttl_ms: 3000
+  probability_band: 400.0
+risk:
+  max_order_notional_pct: 0.10
+  max_market_exposure_pct: 0.30
+  max_daily_loss_pct: 0.10
+  max_hourly_loss_pct: 0.05
+  max_open_orders: 50
+  max_orders_per_sec: 10
+  max_cancel_per_sec: 20
+  latency_kill_switch_ms: 750
+  ws_disconnect_kill_after_sec: 30
+  min_fill_ratio: 0.10
+  max_error_rate_per_min: 20
+  base_capital_usd: 10000
+execution:
+  order_type: FAK
+  retry_attempts: 3
+  retry_backoff_sec: 0.5
+  reconciliation_interval_sec: 60
+paper_broker:
+  slippage_bps: 8
+  fill_probability: 1.0
+markets:
+  - market_id: btc-15m-95000-above
+    description: BTC above 95000 at 15m expiry
+    strike_price: 95000
+    settlement_side: above
+    enabled: true
+  - market_id: btc-15m-94500-above
+    description: BTC above 94500 at 15m expiry
+    strike_price: 94500
+    settlement_side: above
+    enabled: true
+

@@ -1,0 +1,53 @@
+app_name: polymarket001
+mode: guarded_live
+live_trading_enabled: false
+log:
+  level: INFO
+  json: true
+metrics:
+  enabled: true
+  host: 0.0.0.0
+  port: 9108
+webhook:
+  url: null
+signal:
+  default_size: 10.0
+  taker_fee_estimate: 0.012
+  slippage_estimate: 0.012
+  execution_buffer: 0.006
+  min_net_edge: 0.03
+  ttl_ms: 1500
+  probability_band: 500.0
+risk:
+  max_order_notional_pct: 0.03
+  max_market_exposure_pct: 0.10
+  max_daily_loss_pct: 0.03
+  max_hourly_loss_pct: 0.01
+  max_open_orders: 10
+  max_orders_per_sec: 3
+  max_cancel_per_sec: 5
+  latency_kill_switch_ms: 350
+  ws_disconnect_kill_after_sec: 10
+  min_fill_ratio: 0.30
+  max_error_rate_per_min: 5
+  base_capital_usd: 10000
+execution:
+  order_type: FAK
+  retry_attempts: 2
+  retry_backoff_sec: 0.5
+  reconciliation_interval_sec: 30
+paper_broker:
+  slippage_bps: 12
+  fill_probability: 1.0
+markets:
+  - market_id: btc-15m-95000-above
+    description: BTC above 95000 at 15m expiry
+    strike_price: 95000
+    settlement_side: above
+    enabled: true
+  - market_id: btc-15m-95500-above
+    description: BTC above 95500 at 15m expiry
+    strike_price: 95500
+    settlement_side: above
+    enabled: true
+
