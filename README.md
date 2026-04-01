@@ -1,5 +1,7 @@
 # polymarket001
 
+日本語版: [README.ja.md](README.ja.md)
+
 `polymarket001` is an asyncio-based, event-driven BTC short-term market trading system for Polymarket with four run modes: `backtest`, `paper`, `shadow_live`, and `guarded_live`.
 
 ## Prerequisites
@@ -74,4 +76,3 @@ POLYMARKET_LIVE_ENABLED=true python scripts/run_live.py
 ## Metrics
 
 Prometheus metrics are exposed on `/metrics` via `prometheus_client.start_http_server`. Key metrics include `order_count`, `fill_count`, `pnl_usd`, `latency_ms`, `kill_switch_active`, `ws_reconnect_count`, `signal_count`, and `error_rate`.
-

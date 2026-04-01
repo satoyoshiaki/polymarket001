@@ -1,5 +1,7 @@
 # polymarket001
 
+English version: [README.md](README.md)
+
 `polymarket001` は、Polymarket の BTC 短期市場向けに構築された asyncio ベースのイベント駆動型トレーディングシステムです。`backtest`、`paper`、`shadow_live`、`guarded_live` の4つの実行モードに対応しています。
 
 ## 前提条件
@@ -99,6 +101,5 @@ Prometheus メトリクスは `prometheus_client.start_http_server` 経由で `/
 ## テスト実行
 
 ```bash
-cd polymarket001
 pytest
 ```
